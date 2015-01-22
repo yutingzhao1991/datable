@@ -1,4 +1,4 @@
-datable@1.0.0
+datable
 ===
 
 [![NPM version][npm-image]][npm-url]
