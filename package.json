@@ -1,11 +1,8 @@
 {
   "name": "datable",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A light weight tool for handle data in table.",
   "main": "index.js",
-  "bin": {
-    "datable": "datable.js"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
