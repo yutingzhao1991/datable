@@ -13,6 +13,33 @@ Installation
 npm install datable
 ```
 
+Usage
+---
+```javascript
+
+var Datable = require('datable')
+
+var d = new Datable({
+    SPLIT_FLAG: ','
+})
+d.readDataFromFile('./input.csv')
+
+console.log(d.getData())
+
+d.filter(function (item) {
+    return item.country != 'TT'
+})
+
+console.log(d.getData())
+
+```
+
+API
+---
+
+Refer to `demo/demo.js`, This demo will transfer data in `demo/input.csv` to `demo/output.csv`
+
+
 License
 ---
 
