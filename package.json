@@ -1,0 +1,14 @@
+{
+  "name": "datable",
+  "version": "1.0.0",
+  "description": "A light weight tool for handle data in table.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "datable"
+  ],
+  "author": "Tingzhao Yu",
+  "license": "ISC"
+}
