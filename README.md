@@ -39,6 +39,132 @@ API
 
 Refer to `demo/demo.js`, This demo will transfer data in `demo/input.csv` to `demo/output.csv`
 
+**Datable**
+
+```
+new Datable([options, data])
+```
+
+options:
+
+- SPLIT_FLAG : default is '\t'
+
+data:
+
+A array.
+
+
+**filter**
+
+Filter out some rows according to a condition.
+
+
+```
+date,country,code,cnt
+2014-01-01,US,500,1001
+2014-01-02,CN,500,500
+2014-01-02,US,200,1001
+2014-01-01,CN,200,500
+2014-01-01,CN,200,1001
+2014-01-01,TT,500,500
+```
+
+```javascript
+d.filter(function (item) {
+    return item.country != 'TT'
+})
+```
+
+```
+date,country,code,cnt
+2014-01-01,US,500,1001
+2014-01-02,CN,500,500
+2014-01-02,US,200,1001
+2014-01-01,CN,200,500
+2014-01-01,CN,200,1001
+```
+
+**groupby**
+
+Group by with some colomns, you can handler other colomns with your custom handler.
+
+```
+date,country,code,cnt
+2014-01-01,US,500,1001
+2014-01-02,CN,500,500
+2014-01-02,US,200,1001
+2014-01-01,CN,200,500
+2014-01-01,CN,200,1001
+```
+
+```javascript
+d.groupby(['date'], function (res) {
+    res.successCount = 0
+    res.errorCount = 0
+}, function (res, item) {
+    if (item.code == '200') {
+        res.successCount += parseInt(item.cnt)
+    } else {
+        res.errorCount += parseInt(item.cnt)
+    }
+})
+```
+
+```
+date,successCount,errorCount
+2014-01-01,1501,1001
+2014-01-02,1001,500
+```
+
+**pipeline```
+
+pipeline is a helper function for processing data one by one
+
+```
+date,successCount,errorCount
+2014-01-01,1501,1001
+2014-01-02,1001,500
+```
+
+```javascript
+d.pipeline(function (item) {
+    item.date += ' 00:00'
+})
+```
+
+```
+date,successCount,errorCount
+2014-01-01,1501,1001
+2014-01-02,1001,500
+```
+
+**readDataFromFile**
+
+Read data from file.
+
+```javascript
+d.readDataFromFile('./input.csv')
+```
+
+**writeDataToFile**
+
+Write Data to file.
+
+```javascript
+d.writeDataToFile('./output.csv')
+```
+
+**getData**
+
+```javascript
+d.getData()
+```
+
+**setData**
+
+```javascript
+d.setData([])
+```
 
 License
 ---
