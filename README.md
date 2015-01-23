@@ -58,6 +58,7 @@ A array.
 
 Filter out some rows according to a condition.
 
+Before:
 
 ```
 date,country,code,cnt
@@ -69,11 +70,15 @@ date,country,code,cnt
 2014-01-01,TT,500,500
 ```
 
+Code:
+
 ```javascript
 d.filter(function (item) {
     return item.country != 'TT'
 })
 ```
+
+After:
 
 ```
 date,country,code,cnt
@@ -88,6 +93,8 @@ date,country,code,cnt
 
 Group by with some colomns, you can handler other colomns with your custom handler.
 
+Before:
+
 ```
 date,country,code,cnt
 2014-01-01,US,500,1001
@@ -96,6 +103,9 @@ date,country,code,cnt
 2014-01-01,CN,200,500
 2014-01-01,CN,200,1001
 ```
+
+Code:
+
 
 ```javascript
 d.groupby(['date'], function (res) {
@@ -110,27 +120,37 @@ d.groupby(['date'], function (res) {
 })
 ```
 
+After:
+
 ```
 date,successCount,errorCount
 2014-01-01,1501,1001
 2014-01-02,1001,500
 ```
 
-**pipeline```
+**pipeline**
 
 pipeline is a helper function for processing data one by one
 
+
+Before:
+
 ```
 date,successCount,errorCount
 2014-01-01,1501,1001
 2014-01-02,1001,500
 ```
+
+Code:
+
 
 ```javascript
 d.pipeline(function (item) {
     item.date += ' 00:00'
 })
 ```
+
+After:
 
 ```
 date,successCount,errorCount
@@ -141,6 +161,8 @@ date,successCount,errorCount
 **readDataFromFile**
 
 Read data from file.
+
+Before:
 
 ```javascript
 d.readDataFromFile('./input.csv')
