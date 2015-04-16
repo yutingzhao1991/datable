@@ -1,6 +1,6 @@
 {
   "name": "datable",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A light weight tool for handle data in table.",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/yutingzhao1991/datable/issues"
   },
-  "homepage": "https://github.com/yutingzhao1991/datable"
+  "homepage": "https://github.com/yutingzhao1991/datable",
+  "dependencies": {
+    "underscore": "1.8.3"
+  }
 }

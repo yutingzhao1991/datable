@@ -33,4 +33,10 @@ d.pipeline(function (item) {
 
 console.log(d.getData())
 
+d.expand('index', ['1','2'], function (val, item) {
+    item.name = 'index_' + val
+})
+
+console.log(d.getData())
+
 d.writeDataToFile('./output.csv')
