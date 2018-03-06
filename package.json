@@ -1,6 +1,6 @@
 {
   "name": "datable",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A light weight tool for handle data in table.",
   "main": "index.js",
   "scripts": {
